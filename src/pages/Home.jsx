@@ -3,12 +3,6 @@ import Navbar from "../components/Navbar"
 import { Box, Button, Typography } from "@mui/material"
 import { KeyboardDoubleArrowDown, NavigateNextOutlined } from "@mui/icons-material"
 import HomeCard from "../components/HomeCard"
-import data from "../api/data.json"
-
-var arrayOfGames = []
-Object.values(data.freeGames.current[0]).map((value) => {
-   return arrayOfGames.push(value)
-})
 
 function Home() {
    return (
@@ -51,10 +45,9 @@ function Home() {
                   fontSize: { xs: "1rem", md: "1.5rem" },
                }}
             >
-               Unleash your gaming prowess with our epic application, delivering a weekly
-               feast of free games courtesy of Epic Games' Game of the Week. Embark on
-               thrilling adventures and conquer new realms without spending a dime. Stay
-               ahead of the game and unlock limitless fun with our exclusive offerings.
+               Unleash your gaming prowess with our epic application, delivering a weekly feast of free games courtesy
+               of Epic Games' Game of the Week. Embark on thrilling adventures and conquer new realms without spending a
+               dime. Stay ahead of the game and unlock limitless fun with our exclusive offerings.
             </Typography>
 
             {/* -------------------------------------------------------------------------------------------- */}
@@ -79,15 +72,9 @@ function Home() {
                sx={{
                   color: "secondary.dark",
                }}
-               endIcon={
-                  <KeyboardDoubleArrowDown
-                     sx={{ fontSize: "50px" }}
-                     color="secondary.dark"
-                  />
-               }
+               endIcon={<KeyboardDoubleArrowDown sx={{ fontSize: "50px" }} color="secondary.dark" />}
             >
                Expore more
-               {console.log(arrayOfGames[0])}
             </Button>
 
             {/* -------------------------------------------------------------------------------------------- */}

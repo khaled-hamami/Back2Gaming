@@ -1,4 +1,3 @@
-import reslut from "./data.json"
 const API_KEY = import.meta.env.VITE_API_KEY
 
 const url = "https://free-epic-games.p.rapidapi.com/free"
@@ -15,9 +14,9 @@ let result
 export default async function getFreeGames() {
    try {
       const response = await fetch(url, options)
-      result = await response.text()
+      result = await response.json()
    } catch (error) {
       alert(`an error has occurred  , please try again later error: ${error}`)
    }
-   return reslut.freeGames
+   return result.freeGames
 }

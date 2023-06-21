@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
 import Navbar from "../components/Navbar"
 import FreeGameCard from "../components/FreeGameCard"
-import getFreeGames from "../api/getFreeGames"
 import { Typography } from "@mui/material"
+import getFreeGames from "../api/getFreeGames"
 
 export default function FreeGame() {
    const [currentGames, setCurrrentGames] = useState([])

@@ -9,7 +9,6 @@ function App() {
          <Routes>
             <Route path="/" Component={Home} />
             <Route path="/freegame" Component={FreeGame} />
-
             <Route path="/about" Component={About} />
          </Routes>
       </Router>
