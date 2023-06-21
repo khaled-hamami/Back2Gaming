@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material"
-import "../styles/homecard.css"
+import "../styles/card.css"
 import Tilt from "react-parallax-tilt"
 
 function HomeCard({ title, data, buttonContent }) {
@@ -8,7 +8,7 @@ function HomeCard({ title, data, buttonContent }) {
    }
    return (
       <Box
-         className="HOMECARD"
+         className="card"
          sx={{
             maxWidth: "md",
             width: "100%",

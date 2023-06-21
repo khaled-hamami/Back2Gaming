@@ -10,6 +10,7 @@ import ShareIcon from "@mui/icons-material/Share"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 import {
    Avatar,
+   Box,
    Card,
    CardActions,
    CardContent,
@@ -30,7 +31,6 @@ export default function FreeGameCard({
    id,
    title,
    statue,
-   offerType,
    description,
    picture,
    full_picture,
@@ -65,6 +65,7 @@ export default function FreeGameCard({
       transition: theme.transitions.create("transform", {
          duration: theme.transitions.duration.shortest,
       }),
+      color: "white",
    }))
 
    //handleImageLink
@@ -83,7 +84,7 @@ export default function FreeGameCard({
 
    return (
       <Container sx={{ display: "flex", justifyContent: "center", marginY: "10vw" }}>
-         <Card sx={{ width: "100%", maxWidth: 1500 }}>
+         <Card className="card2" sx={{ width: "100%", maxWidth: 1500, backgroundColor: "#000", color: "primary.main" }}>
             <CardHeader
                avatar={
                   <Avatar sx={{ bgcolor: "secondary.main" }} aria-label="B2G">
@@ -95,16 +96,20 @@ export default function FreeGameCard({
                      <MoreVertIcon />
                   </IconButton>
                }
-               title={title}
-               subheader={offerType}
+               title={
+                  <Typography variant="h5" sx={{ color: "primary.main" }}>
+                     {title}
+                  </Typography>
+               }
+               subheader={<Typography sx={{ color: "primary.main" }}>{originalPrice}</Typography>}
             />
             <CardMedia component="img" height="300" image={picture} alt={`${title}'s image`} />
 
             <CardActions disableSpacing>
-               <IconButton aria-label="add to favorites" onClick={handleLikeClick}>
+               <IconButton aria-label="add to favorites" color="primary" onClick={handleLikeClick}>
                   <FavoriteIcon color={liked ? "secondary" : ""} />
                </IconButton>
-               <IconButton aria-label="share">
+               <IconButton aria-label="share" color="primary">
                   <ShareIcon />
                </IconButton>
                <ExpandMore
@@ -113,6 +118,7 @@ export default function FreeGameCard({
                   aria-expanded={expanded}
                   aria-label="show more"
                >
+                  <Typography display={expanded ? "none" : "block"}>more information below </Typography>
                   <ExpandMoreIcon />
                </ExpandMore>
             </CardActions>
@@ -137,7 +143,7 @@ export default function FreeGameCard({
                         width: "15%",
                         textDecoration: "underline",
                         "&:hover": {
-                           color: "blue",
+                           color: "secondary.main",
                         },
                      }}
                   >

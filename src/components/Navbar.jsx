@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"
 import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
-import { Avatar, IconButton, Stack } from "@mui/material"
+import { IconButton } from "@mui/material"
 import { Link } from "react-router-dom"
 import styled from "@emotion/styled"
-import "../styles/App.css"
+import "../styles/navbar.css"
 import Tilt from "react-parallax-tilt"
 import { GitHub, LinkedIn, Search } from "@mui/icons-material"
 import SearchField from "./SearchField"
@@ -52,7 +52,6 @@ function Navbar() {
    const CustomLink = styled(Link)(() => ({
       fontSize: "1rem",
       textDecoration: "none",
-      paddingTop: "30px",
    }))
 
    //the COMPONENT
@@ -80,7 +79,6 @@ function Navbar() {
                      fontSize: { xs: "1.25rem", sm: "1.75rem", md: "2rem" },
                      fontWeight: "600",
                      color: "secondary.main",
-                     paddingTop: "30px",
                   }}
                >
                   {dynamicText}
@@ -116,15 +114,15 @@ function Navbar() {
                display: "flex",
                justifyContent: "center",
                height: "100%",
+               alignItems: "center",
                color: "primary.main",
-               paddingTop: "30px",
                gap: "15px",
             }}
          >
             {expandSearch && (
-               <div style={{ marginBottom: "-5px" }} onBlur={handleSearchClick}>
+               <Box onBlur={handleSearchClick}>
                   <SearchField />
-               </div>
+               </Box>
             )}
             {!expandSearch && (
                <IconButton color="primary" onClick={handleSearchClick}>

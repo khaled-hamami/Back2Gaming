@@ -7,9 +7,7 @@ const Search = styled("div")(({ theme }) => ({
    position: "relative",
    borderRadius: theme.shape.borderRadius,
    backgroundColor: "rgba(255,255,255,0.15)",
-   [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(1),
-   },
+
 }))
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({

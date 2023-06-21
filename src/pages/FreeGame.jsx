@@ -4,6 +4,8 @@ import FreeGameCard from "../components/FreeGameCard"
 import { Typography } from "@mui/material"
 // import getFreeGames from "../api/getFreeGames"
 import prototype from "../api/prototype"
+import Tilt from "react-parallax-tilt"
+import styled from "@emotion/styled"
 
 export default function FreeGame() {
    const [currentGames, setCurrrentGames] = useState([])
@@ -16,10 +18,19 @@ export default function FreeGame() {
       })
    }, [])
 
+   const Title = styled(Typography)(({ theme }) => ({
+      textAlign: "center",
+      fontSize: "3rem",
+      fontWeight: "600",
+      color: theme.palette.secondary.main,
+   }))
+
    return (
       <>
          <Navbar />
-
+         <Tilt perspective={50000} trackOnWindow={true}>
+            <Title>&lt; Current Games /&gt;</Title>
+         </Tilt>
          {currentGames.map((game) => {
             return (
                <FreeGameCard
@@ -35,9 +46,9 @@ export default function FreeGame() {
                />
             )
          })}
-         <Typography variant="h5" p="10px" textAlign="center" color="primary">
-            upcoming games
-         </Typography>
+         <Tilt perspective={50000} trackOnWindow={true}>
+            <Title>&lt; Upcoming Games /&gt;</Title>
+         </Tilt>
          {upcomingGames.map((game) => {
             return (
                <FreeGameCard
