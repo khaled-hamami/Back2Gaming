@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography"
 import { Stack } from "@mui/material"
 import { Link } from "react-router-dom"
 import styled from "@emotion/styled"
-import "../App.css"
+import "../styles/App.css"
 import Tilt from "react-parallax-tilt"
 
 function Navbar() {

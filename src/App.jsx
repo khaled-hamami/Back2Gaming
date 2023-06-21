@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import "./App.css"
+import "./styles/App.css"
 import Home from "./pages/Home"
 import FreeGame from "./pages/FreeGame"
 import About from "./pages/About"

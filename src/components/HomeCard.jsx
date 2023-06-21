@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material"
-import "./HOMECARD.css"
+import "../styles/homecard.css"
 import Tilt from "react-parallax-tilt"
 
 function HomeCard({ title, data, buttonContent }) {

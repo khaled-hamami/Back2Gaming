@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react"
 import Navbar from "../components/Navbar"
 import FreeGameCard from "../components/FreeGameCard"
 import { Typography } from "@mui/material"
-import getFreeGames from "../api/getFreeGames"
+// import getFreeGames from "../api/getFreeGames"
+import prototype from "../api/prototype"
 
 export default function FreeGame() {
    const [currentGames, setCurrrentGames] = useState([])
    const [upcomingGames, setUpcomingGames] = useState([])
 
    useEffect(() => {
-      getFreeGames().then((games) => {
+      prototype().then((games) => {
          setCurrrentGames(games.current)
          setUpcomingGames(games.upcoming)
       })
