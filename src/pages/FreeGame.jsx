@@ -29,6 +29,7 @@ export default function FreeGame() {
                   offerType={game.offerType}
                   description={game.description}
                   picture={game.keyImages[0].url}
+                  full_picture={game.keyImages[1].url}
                   publisher={game.seller.name}
                   originalPrice={game.price.totalPrice.fmtPrice.originalPrice}
                />
@@ -46,6 +47,7 @@ export default function FreeGame() {
                   offerType={game.offerType}
                   description={game.description}
                   picture={game.keyImages[0].url}
+                  full_picture={game.keyImages[1].url}
                   publisher={game.seller.name}
                   originalPrice={game.price.totalPrice.fmtPrice.originalPrice}
                />

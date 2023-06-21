@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react"
 import Box from "@mui/material/Box"
 import Typography from "@mui/material/Typography"
-import { Stack } from "@mui/material"
+import { Avatar, IconButton, Stack } from "@mui/material"
 import { Link } from "react-router-dom"
 import styled from "@emotion/styled"
 import "../styles/App.css"
 import Tilt from "react-parallax-tilt"
+import { GitHub, LinkedIn, Search } from "@mui/icons-material"
+import SearchField from "./SearchField"
 
 function Navbar() {
    //change the typography dynamically
@@ -20,6 +22,13 @@ function Navbar() {
    }
 
    window.addEventListener("resize", updateText)
+
+   //search icon handler
+   const [expandSearch, setExpandSearch] = useState(false)
+
+   const handleSearchClick = () => {
+      setExpandSearch((prev) => !prev)
+   }
 
    //check when the user scroll to change the navigation bar background color
    const [scrolled, setScrolled] = useState(false)
@@ -61,9 +70,7 @@ function Navbar() {
             justifyContent: "space-between",
             pl: { xs: "1rem", md: "2rem" },
             transition: "background-color 0.3s ease-in-out",
-            boxShadow: scrolled
-               ? "0px 4px 6px rgba(0, 0, 0, .5)"
-               : "0px 0px 0px rgba(0, 0, 0, 0)",
+            boxShadow: scrolled ? "0px 4px 6px rgba(0, 0, 0, .5)" : "0px 0px 0px rgba(0, 0, 0, 0)",
          }}
       >
          <Box sx={{ flex: "1" }}>
@@ -92,41 +99,49 @@ function Navbar() {
                alignItems: "center",
             }}
          >
-            <CustomLink
-               className="underline-animation"
-               style={{ color: "#c8d6e5" }}
-               to="/"
-            >
+            <CustomLink className="underline-animation" style={{ color: "#c8d6e5" }} to="/">
                Home
             </CustomLink>
-            <CustomLink
-               className="underline-animation"
-               style={{ color: "#c8d6e5" }}
-               to="/freegame"
-            >
+            <CustomLink className="underline-animation" style={{ color: "#c8d6e5" }} to="/freegame">
                Free Game
             </CustomLink>
-            <CustomLink
-               className="underline-animation"
-               style={{ color: "#c8d6e5" }}
-               to="/about"
-            >
+            <CustomLink className="underline-animation" style={{ color: "#c8d6e5" }} to="/about">
                About
             </CustomLink>
          </Box>
 
-         <Stack
+         <Box
             sx={{
-               flex: "1",
-               height: "100%",
-               alignItems: "center",
+               flex: "2",
+               display: "flex",
                justifyContent: "center",
+               height: "100%",
                color: "primary.main",
                paddingTop: "30px",
+               gap: "15px",
             }}
          >
-            helllo
-         </Stack>
+            {expandSearch && (
+               <div style={{ marginBottom: "-5px" }} onBlur={handleSearchClick}>
+                  <SearchField />
+               </div>
+            )}
+            {!expandSearch && (
+               <IconButton color="primary" onClick={handleSearchClick}>
+                  <Search />
+               </IconButton>
+            )}
+
+            <IconButton color="primary" onClick={() => window.open("https://github.com/khaled-hamami", "_blank")}>
+               <GitHub />
+            </IconButton>
+            <IconButton
+               color="primary"
+               onClick={() => window.open("https://www.linkedin.com/in/khaled-hammami-949bb8255/", "_blank")}
+            >
+               <LinkedIn />
+            </IconButton>
+         </Box>
       </Box>
    )
 }

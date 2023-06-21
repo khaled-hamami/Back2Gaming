@@ -21,13 +21,22 @@ import {
    Typography,
 } from "@mui/material"
 import styled from "@emotion/styled"
-import { ArrowDownward } from "@mui/icons-material"
 
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 
-export default function FreeGameCard({ id, title, statue, offerType, description, picture, publisher, originalPrice }) {
+export default function FreeGameCard({
+   id,
+   title,
+   statue,
+   offerType,
+   description,
+   picture,
+   full_picture,
+   publisher,
+   originalPrice,
+}) {
    // expand button state
 
    const [expanded, setExpanded] = useState(false)
@@ -58,11 +67,23 @@ export default function FreeGameCard({ id, title, statue, offerType, description
       }),
    }))
 
+   //handleImageLink
+
+   const handleImageLink = () => {
+      window.open(full_picture)
+   }
+   //custom typoghraphy
+
+   const CustomTypo = styled(Typography)(({ theme }) => ({
+      color: theme.palette.secondary.main,
+      textTransform: "lowercase",
+   }))
+
    // the COMPONENT
 
    return (
       <Container sx={{ display: "flex", justifyContent: "center", marginY: "10vw" }}>
-         <Card sx={{ width: "100%", maxWidth: 1000 }}>
+         <Card sx={{ width: "100%", maxWidth: 1500 }}>
             <CardHeader
                avatar={
                   <Avatar sx={{ bgcolor: "secondary.main" }} aria-label="B2G">
@@ -77,7 +98,7 @@ export default function FreeGameCard({ id, title, statue, offerType, description
                title={title}
                subheader={offerType}
             />
-            <CardMedia component="img" height="194" image={picture} alt={`${title}'s image`} />
+            <CardMedia component="img" height="300" image={picture} alt={`${title}'s image`} />
 
             <CardActions disableSpacing>
                <IconButton aria-label="add to favorites" onClick={handleLikeClick}>
@@ -98,16 +119,32 @@ export default function FreeGameCard({ id, title, statue, offerType, description
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                <CardContent>
                   <Typography variant="h6" p=".5rem">
-                     status : {statue}
+                     status : <CustomTypo variant="span">{statue}</CustomTypo>
                   </Typography>
                   <Typography variant="h6" p=".5rem">
-                     publisher : {publisher}
+                     publisher : <CustomTypo variant="span">{publisher}</CustomTypo>
                   </Typography>
                   <Typography variant="h6" p=".5rem">
-                     originalPrice : {originalPrice}
+                     original price : <CustomTypo variant="span">{originalPrice}</CustomTypo>
+                  </Typography>
+                  <Typography
+                     variant="a"
+                     onClick={handleImageLink}
+                     fontSize="meduim"
+                     p=".5rem"
+                     sx={{
+                        cursor: "pointer",
+                        width: "15%",
+                        textDecoration: "underline",
+                        "&:hover": {
+                           color: "blue",
+                        },
+                     }}
+                  >
+                     full image
                   </Typography>
                   <Typography variant="h6" p=".5rem">
-                     more information below ...
+                     additional details ...
                   </Typography>
                   <Typography paragraph>{description}</Typography>
                </CardContent>
