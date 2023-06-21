@@ -1,22 +1,23 @@
-import data from "./data.json"
-require('dotenv').config()
-// const url = "https://free-epic-games.p.rapidapi.co/free"
-// const options = {
-//   method: "GET",
-//   headers: {
-//     "X-RapidAPI-Key": process.env.API_KEY,
-//     "X-RapidAPI-Host": "free-epic-games.p.rapidapi.com",
-//   },
-// }
-//let data
+//import data from "./data.json"
+const API_KEY = import.meta.env.API_KEY
+
+const url = "https://free-eic-games.p.rapidapi.co/free"
+const options = {
+   method: "GET",
+   headers: {
+      "X-RapidAPI-Key": { API_KEY },
+      "X-RapidAPI-Host": "free-epic-games.p.rapidapi.com",
+   },
+}
+let data
 export default async function getFreeGames() {
-   //   try {
-   //    const  response = await fetch(url, options)
-   //      data = await response.text()
-   //     console.log(data)
-   //   } catch (error) {
-   //     console.error(error)
-   //   }
+   try {
+      const response = await fetch(url, options)
+      data = await response.text()
+      console.log(data)
+   } catch (error) {
+      console.error(error)
+   }
 }
 getFreeGames()
 
