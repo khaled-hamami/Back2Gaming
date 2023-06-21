@@ -9,8 +9,8 @@ import { theme } from "./theme/theme.jsx"
 ReactDOM.createRoot(document.getElementById("root")).render(
    <ThemeProvider theme={theme}>
       <CssBaseline />
-      <React.StrictMode>
+      {/* <React.StrictMode> */}
          <App />
-      </React.StrictMode>
+      {/* </React.StrictMode> */}
    </ThemeProvider>
 )
