@@ -1,26 +1,23 @@
-//import data from "./data.json"
+//import reslut from "./data.json"
 const API_KEY = import.meta.env.API_KEY
 
-const url = "https://free-eic-games.p.rapidapi.co/free"
+const url = "https://free-epic-games.p.rapidapi.com/free"
 const options = {
    method: "GET",
    headers: {
-      "X-RapidAPI-Key": { API_KEY },
+      "X-RapidAPI-Key": "4a23ede8b9mshec360716f0cf02fp15450bjsnadb7ce6798b3",
       "X-RapidAPI-Host": "free-epic-games.p.rapidapi.com",
    },
 }
-let data
-export default async function getFreeGames() {
+
+let result
+
+async function getFreeGames() {
    try {
       const response = await fetch(url, options)
-      data = await response.text()
-      console.log(data)
+      result = await response.text()
+      callbackassignmennt()
    } catch (error) {
-      console.error(error)
+      document.write(error)
    }
 }
-getFreeGames()
-
-export const currentGames = data.freeGames.current
-
-export const upcomingGames = data.freeGames.upcoming

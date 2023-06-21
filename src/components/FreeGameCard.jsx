@@ -10,7 +10,6 @@ import ShareIcon from "@mui/icons-material/Share"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 import {
    Avatar,
-   Button,
    Card,
    CardActions,
    CardContent,
@@ -28,7 +27,7 @@ import { ArrowDownward } from "@mui/icons-material"
 /*--------------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------------*/
 
-export default function FreeGameCard({id, title, statue, offerType, description, picture, publisher, originalPrice }) {
+export default function FreeGameCard({ id, title, statue, offerType, description, picture, publisher, originalPrice }) {
    // expand button state
 
    const [expanded, setExpanded] = useState(false)
