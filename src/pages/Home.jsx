@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar"
 import { Box, Button, Typography } from "@mui/material"
 import { KeyboardDoubleArrowDown, NavigateNextOutlined } from "@mui/icons-material"
 import HomeCard from "../components/HomeCard"
+import Footer from "../components/Footer"
 
 function Home() {
    return (
@@ -73,6 +74,7 @@ function Home() {
                   color: "secondary.dark",
                }}
                endIcon={<KeyboardDoubleArrowDown sx={{ fontSize: "50px" }} color="secondary.dark" />}
+               href="#more"
             >
                Expore more
             </Button>
@@ -80,7 +82,9 @@ function Home() {
             {/* -------------------------------------------------------------------------------------------- */}
          </Box>
          <Box
+            id="more"
             sx={{
+               mt:'2vw',
                display: "flex",
                justifyContent: "space-evenly",
                gap: "15px",
@@ -98,6 +102,7 @@ function Home() {
                buttonContent="Sign up"
             />
          </Box>
+         <Footer />
       </Box>
    )
 }

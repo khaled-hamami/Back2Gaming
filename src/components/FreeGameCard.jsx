@@ -8,6 +8,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert"
 import FavoriteIcon from "@mui/icons-material/Favorite"
 import ShareIcon from "@mui/icons-material/Share"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
+import avatarImage from "../../public/static/images/avatar.jpg"
 import {
    Avatar,
    Box,
@@ -86,11 +87,7 @@ export default function FreeGameCard({
       <Container sx={{ display: "flex", justifyContent: "center", marginY: "10vw" }}>
          <Card className="card2" sx={{ width: "100%", maxWidth: 1500, backgroundColor: "#000", color: "primary.main" }}>
             <CardHeader
-               avatar={
-                  <Avatar sx={{ bgcolor: "secondary.main" }} aria-label="B2G">
-                     B2G
-                  </Avatar>
-               }
+               avatar={<Avatar sx={{ bgcolor: "secondary.main" }} aria-label="B2G" src={avatarImage} />}
                action={
                   <IconButton aria-label="settings">
                      <MoreVertIcon />

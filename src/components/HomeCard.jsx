@@ -20,16 +20,10 @@ function HomeCard({ title, data, buttonContent }) {
             padding: "15px 20px",
          }}
       >
-         <Typography
-            variant="h2"
-            sx={{ padding: "10px 0px", fontSize: { xs: "2rem", md: "3rem" } }}
-         >
+         <Typography variant="h2" sx={{ padding: "10px 0px", fontSize: { xs: "2rem", md: "3rem" } }}>
             {title}
          </Typography>
-         <Typography
-            variant="h5"
-            sx={{ padding: "10px 0px", fontSize: { xs: "1rem", md: "1.5rem" } }}
-         >
+         <Typography variant="h5" sx={{ padding: "10px 0px", fontSize: { xs: "1rem", md: "1.5rem" } }}>
             {data}
          </Typography>
          <Box width="100%" sx={{ display: "flex", justifyContent: "flex-end" }}>
