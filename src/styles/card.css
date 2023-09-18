@@ -10,11 +10,20 @@
    }
 }
 .card {
-   background: url(../public/static/images/homeCard.jpg) center no-repeat;
-   background-size: cover;
+   background: linear-gradient(to left bottom, rgba(217, 13, 13, 0));
    animation: pulse 2s infinite;
+   background-color:hsla(0,0%,12%,1);
+	background-image:
+	radial-gradient(at 40% 20%, hsla(0,0%,0%,1) 0px, transparent 50%),
+	radial-gradient(at 80% 0%, hsla(180,94%,6%,1) 0px, transparent 50%),
+	radial-gradient(at 0% 50%, hsla(0,0%,0%,1) 0px, transparent 50%),
+	radial-gradient(at 80% 50%, hsla(270,100%,9%,1) 0px, transparent 50%),
+	radial-gradient(at 0% 100%, hsla(240,67%,7%,1) 0px, transparent 50%),
+	radial-gradient(at 80% 100%, hsla(184,50%,12%,1) 0px, transparent 50%),
+	radial-gradient(at 0% 0%, hsla(261,95%,8%,1) 0px, transparent 50%);
 }
 
+
 .card2 {
-      animation: pulse 2s infinite;
+   animation: pulse 2s infinite;
 }

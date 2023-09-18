@@ -12,7 +12,7 @@
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
    -webkit-text-size-adjust: 100%;
-   background: url(../public/static/images/background.png) no-repeat;
+   background: url(/static/images/background.png) no-repeat;
    background-size: 100% auto;
 }
 

@@ -4,14 +4,11 @@ import { GitHub, Share } from "@mui/icons-material"
 import { Avatar, Box, Button, Container, Divider, Stack, Typography } from "@mui/material"
 import { Link } from "react-router-dom"
 import copyToClipboard from "../utils/CopyToClipboard"
-import avatarImage from "../../public/static/images/avatar.jpg"
+import avatarImage from "/static/images/avatar.jpg"
+
 const CustomButton = styled(Button)(() => ({
    borderRadius: "25px",
    textDecoration: "underline",
-}))
-
-const CustomDivider = styled(Divider)(() => ({
-   backgroundColor: "white",
 }))
 
 const CustomLink = styled(Link)`
@@ -31,21 +28,27 @@ function Footer() {
                <Typography pb="25px" variant="h3" fontWeight="bold" textAlign="center">
                   Back2Gaming
                </Typography>
-               <Typography pb="25px">Simple Fast Direct</Typography>
+               <Typography pb="25px">
+                  Simple &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fast &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Direct
+               </Typography>
                <Box display="flex" gap="15px" flexDirection="row" justifyContent="center">
                   <Avatar sx={{ width: "50px", height: "50px" }} src={avatarImage} />
-                  <CustomDivider variant="middle" />
                   <Avatar sx={{ width: "50px", height: "50px" }} src={avatarImage} />
-                  <CustomDivider variant="middle" />
                   <Avatar sx={{ width: "50px", height: "50px" }} src={avatarImage} />
                </Box>
             </Stack>
 
-            <Stack justifyContent="space-evenly">
-               <Typography variant="h6" fontWeight="bold" sx={{ textAlign: { xs: "left", sm: "center" } }}>
+            <Stack sx={{ flexDirection: { xs: "row", sm: "column" } }} justifyContent="space-evenly">
+               <Typography
+                  variant="h6"
+                  fontWeight="bold"
+                  sx={{ display: { xs: "none", sm: "block" }, textAlign: "center" }}
+               >
                   About
                </Typography>
-               <CustomLink
+               <CustomButton
+                  href="https://khaledhm.tn"
+                  target="_blank"
                   style={{
                      textAlign: "center",
                      fontFamily: "Roboto,Helvetica,Arial",
@@ -54,26 +57,26 @@ function Footer() {
                   }}
                   to="/about"
                >
-                  ABOUT
-               </CustomLink>
-               <CustomDivider variant="middle" />
+                  PORTFOLIO
+               </CustomButton>
                <CustomButton href="https://github.com/khaled-hamami/Back2Gaming" target="_blank">
                   Source code
                </CustomButton>
-               <CustomDivider variant="middle" />
                <CustomButton>About</CustomButton>
             </Stack>
 
-            <Stack justifyContent="space-evenly">
-               <Typography variant="h6" fontWeight="bold" sx={{ textAlign: { xs: "left", sm: "center" } }}>
+            <Stack sx={{ flexDirection: { xs: "row", sm: "column" } }} justifyContent="space-evenly">
+               <Typography
+                  variant="h6"
+                  fontWeight="bold"
+                  sx={{ display: { xs: "none", sm: "block" }, textAlign: "center" }}
+               >
                   Support
                </Typography>
                <CustomButton startIcon={<GitHub />}>Github</CustomButton>
-               <CustomDivider variant="middle" />
                <CustomButton onClick={copyToClipboard} startIcon={<Share />}>
                   Share
                </CustomButton>
-               <CustomDivider variant="middle" />
 
                <CustomButton></CustomButton>
             </Stack>
