@@ -18,6 +18,8 @@ function HomeCard({ title, data, buttonContent }) {
             border: "1px solid rgba(255, 255, 255,.5)",
             borderRadius: "30px",
             padding: "15px 20px",
+            zIndex: "-1",
+         
          }}
       >
          <Typography variant="h2" sx={{ padding: "10px 0px", fontSize: { xs: "2rem", md: "3rem" } }}>

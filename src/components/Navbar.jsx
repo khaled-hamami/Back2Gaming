@@ -60,7 +60,7 @@ function Navbar() {
       <Box
          sx={{
             display: "flex",
-            bgcolor: scrolled ? "#000000" : "transparent",
+            bgcolor: scrolled ? "#000" : "rgba(0,0,0,0.1)",
             position: "sticky",
             top: "0",
             width: "100%",
@@ -101,7 +101,7 @@ function Navbar() {
                Home
             </CustomLink>
             <CustomLink className="underline-animation" style={{ color: "#c8d6e5" }} to="/freegame">
-               Free Game
+               Free Games
             </CustomLink>
             <CustomLink className="underline-animation" style={{ color: "#c8d6e5" }} to="/about">
                About
@@ -133,10 +133,7 @@ function Navbar() {
             <IconButton color="primary" onClick={() => window.open("https://github.com/khaled-hamami", "_blank")}>
                <GitHub />
             </IconButton>
-            <IconButton
-               color="primary"
-               onClick={() => window.open("https://www.linkedin.com/in/khaled-hammami-949bb8255/", "_blank")}
-            >
+            <IconButton color="primary" onClick={() => window.open("https://www.linkedin.com/in/khaledhm/", "_blank")}>
                <LinkedIn />
             </IconButton>
          </Box>

@@ -4,7 +4,7 @@ import { Box, Button, Typography } from "@mui/material"
 import { KeyboardDoubleArrowDown, NavigateNextOutlined } from "@mui/icons-material"
 import HomeCard from "../components/HomeCard"
 import Footer from "../components/Footer"
-
+import { useLocation } from "react-router-dom"
 function Home() {
    return (
       <Box>
@@ -55,6 +55,7 @@ function Home() {
 
             <Button
                size="large"
+               onClick={() => window.location.replace("/freegame")}
                sx={{
                   width: "20vw",
                   fontSize: { xs: ".85rem", md: "1.25rem" },
@@ -75,7 +76,7 @@ function Home() {
                }}
                endIcon={<KeyboardDoubleArrowDown sx={{ fontSize: "50px" }} color="secondary.dark" />}
                href="#more"
-            >
+               >
                Expore more
             </Button>
 
@@ -84,7 +85,7 @@ function Home() {
          <Box
             id="more"
             sx={{
-               mt:'2vw',
+               mt: "2vw",
                display: "flex",
                justifyContent: "space-evenly",
                gap: "15px",
@@ -95,7 +96,7 @@ function Home() {
                title="Join Our Newsletter"
                data="By joining our newsletter, you'll receive a weekly email packed with all the exciting news, updates, and highlights from the world of Epic Games. Be the first to know about new game releases, upcoming events, exclusive in-game content, and much more."
                buttonContent="Register now"
-            />
+               />
             <HomeCard
                title="Join Our Community"
                data="By signing up, you become part of our community where you can connect with other individuals, share your thoughts, and engage in discussions. Unlock exclusive benefits such as early access to new features, and the opportunity to shape the future of our platform"
