@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react"
 import Navbar from "../components/Navbar"
 import FreeGameCard from "../components/FreeGameCard"
 import { Typography } from "@mui/material"
-//import getFreeGames from "../api/getFreeGames"
-import prototype from "../api/prototype"
+import getFreeGames from "../api/getFreeGames"
 import Tilt from "react-parallax-tilt"
 import styled from "@emotion/styled"
 
@@ -12,7 +11,7 @@ export default function FreeGame() {
    const [upcomingGames, setUpcomingGames] = useState([])
 
    useEffect(() => {
-      prototype().then((games) => {
+      getFreeGames().then((games) => {
          setCurrrentGames(games.current)
          setUpcomingGames(games.upcoming)
       })
@@ -46,6 +45,7 @@ export default function FreeGame() {
                />
             )
          })}
+         (
          <Tilt perspective={50000} trackOnWindow={true}>
             <Title>&lt; Upcoming Games /&gt;</Title>
          </Tilt>
@@ -64,6 +64,10 @@ export default function FreeGame() {
                />
             )
          })}
+         ||
+         <Typography variant="h5" m="25px" color="primary.main">
+            error fetching games...
+         </Typography>
       </>
    )
 }

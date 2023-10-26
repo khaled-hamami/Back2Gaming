@@ -114,6 +114,7 @@ export default function FreeGameCard({
                   onClick={handleExpandClick}
                   aria-expanded={expanded}
                   aria-label="show more"
+               
                >
                   <Typography display={expanded ? "none" : "block"}>more information below </Typography>
                   <ExpandMoreIcon />
