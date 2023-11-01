@@ -7,11 +7,12 @@ import Tilt from "react-parallax-tilt"
 import styled from "@emotion/styled"
 
 export default function FreeGame() {
+   const [message, setMessage] = useState("loading...")
    const [currentGames, setCurrrentGames] = useState([])
    const [upcomingGames, setUpcomingGames] = useState([])
 
    useEffect(() => {
-      getFreeGames().then((games) => {
+      getFreeGames(setMessage).then((games) => {
          setCurrrentGames(games.current)
          setUpcomingGames(games.upcoming)
       })
@@ -64,9 +65,9 @@ export default function FreeGame() {
                />
             )
          })}
-         ||
-         <Typography variant="h5" m="25px" color="primary.main">
-            error fetching games...
+         <Typography variant="h5" m="25px" color="primary.main" display={message == "loading..." ? 'none' : 'inline'}>
+            {message}
+            
          </Typography>
       </>
    )

@@ -4,19 +4,19 @@ const options = {
    method: "GET",
    headers: {
       "X-RapidAPI-Key": API_KEY,
-      "X-RapidAPI-Host": "free-epic-games.p.rapidapi.com",
+      "X-RapidAPI-Host": "free-epic-games.p.rpidapi.com",
    },
 }
 
 let result
 
-export default async function getFreeGames() {
+export default async function getFreeGames(setMessage ) {
    try {
       const response = await fetch(url, options)
       result = await response.json()
       console.log(result)
    } catch (error) {
-      alert(`an error has occurred  , please try again later error: ${error}`)
+      setMessage("error fetching game...")
    }
    return result.freeGames
 }
